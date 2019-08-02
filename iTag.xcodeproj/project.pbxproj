@@ -8,20 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		A3A30D8022F461CE00292C2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A30D7F22F461CE00292C2E /* AppDelegate.swift */; };
-		A3A30D8222F461CE00292C2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A30D8122F461CE00292C2E /* ViewController.swift */; };
 		A3A30D8522F461CE00292C2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A30D8322F461CE00292C2E /* Main.storyboard */; };
 		A3A30D8722F461D000292C2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3A30D8622F461D000292C2E /* Assets.xcassets */; };
 		A3A30D8A22F461D000292C2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3A30D8822F461D000292C2E /* LaunchScreen.storyboard */; };
+		A3A30D9422F4623800292C2E /* NearbyDevicesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A30D9322F4623800292C2E /* NearbyDevicesVC.swift */; };
+		A3A30D9622F4640800292C2E /* BTManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A30D9522F4640800292C2E /* BTManager.swift */; };
+		A3A30D9822F4674200292C2E /* BTUUIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A30D9722F4674200292C2E /* BTUUIDs.swift */; };
+		A3A30D9A22F467D600292C2E /* BTUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A30D9922F467D600292C2E /* BTUtils.swift */; };
+		A3A30D9C22F468F000292C2E /* BTDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A30D9B22F468F000292C2E /* BTDevice.swift */; };
+		A3A30D9E22F476A900292C2E /* DeviceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A30D9D22F476A900292C2E /* DeviceVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A3A30D7C22F461CE00292C2E /* iTag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3A30D7F22F461CE00292C2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A3A30D8122F461CE00292C2E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3A30D8422F461CE00292C2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3A30D8622F461D000292C2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3A30D8922F461D000292C2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3A30D8B22F461D000292C2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3A30D9322F4623800292C2E /* NearbyDevicesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyDevicesVC.swift; sourceTree = "<group>"; };
+		A3A30D9522F4640800292C2E /* BTManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTManager.swift; sourceTree = "<group>"; };
+		A3A30D9722F4674200292C2E /* BTUUIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTUUIDs.swift; sourceTree = "<group>"; };
+		A3A30D9922F467D600292C2E /* BTUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTUtils.swift; sourceTree = "<group>"; };
+		A3A30D9B22F468F000292C2E /* BTDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTDevice.swift; sourceTree = "<group>"; };
+		A3A30D9D22F476A900292C2E /* DeviceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceVC.swift; sourceTree = "<group>"; };
+		A3A30D9F22F484AB00292C2E /* iTag.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iTag.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +51,7 @@
 			children = (
 				A3A30D7E22F461CE00292C2E /* iTag */,
 				A3A30D7D22F461CE00292C2E /* Products */,
+				A3A30DA022F484AB00292C2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +66,43 @@
 		A3A30D7E22F461CE00292C2E /* iTag */ = {
 			isa = PBXGroup;
 			children = (
+				A3A30D9F22F484AB00292C2E /* iTag.entitlements */,
+				A3A30D9222F4622100292C2E /* Bluetooth */,
+				A3A30D9122F4621900292C2E /* UI */,
 				A3A30D7F22F461CE00292C2E /* AppDelegate.swift */,
-				A3A30D8122F461CE00292C2E /* ViewController.swift */,
 				A3A30D8322F461CE00292C2E /* Main.storyboard */,
 				A3A30D8622F461D000292C2E /* Assets.xcassets */,
 				A3A30D8822F461D000292C2E /* LaunchScreen.storyboard */,
 				A3A30D8B22F461D000292C2E /* Info.plist */,
 			);
 			path = iTag;
+			sourceTree = "<group>";
+		};
+		A3A30D9122F4621900292C2E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A3A30D9322F4623800292C2E /* NearbyDevicesVC.swift */,
+				A3A30D9D22F476A900292C2E /* DeviceVC.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		A3A30D9222F4622100292C2E /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				A3A30D9522F4640800292C2E /* BTManager.swift */,
+				A3A30D9722F4674200292C2E /* BTUUIDs.swift */,
+				A3A30D9922F467D600292C2E /* BTUtils.swift */,
+				A3A30D9B22F468F000292C2E /* BTDevice.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		A3A30DA022F484AB00292C2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +137,14 @@
 				TargetAttributes = {
 					A3A30D7B22F461CE00292C2E = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.WAC = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -135,8 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3A30D8222F461CE00292C2E /* ViewController.swift in Sources */,
+				A3A30D9822F4674200292C2E /* BTUUIDs.swift in Sources */,
+				A3A30D9A22F467D600292C2E /* BTUtils.swift in Sources */,
+				A3A30D9E22F476A900292C2E /* DeviceVC.swift in Sources */,
+				A3A30D9C22F468F000292C2E /* BTDevice.swift in Sources */,
+				A3A30D9422F4623800292C2E /* NearbyDevicesVC.swift in Sources */,
 				A3A30D8022F461CE00292C2E /* AppDelegate.swift in Sources */,
+				A3A30D9622F4640800292C2E /* BTManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
