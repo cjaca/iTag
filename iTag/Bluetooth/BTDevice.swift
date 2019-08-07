@@ -15,6 +15,7 @@ protocol BTDeviceDelegate: class {
     func deviceDisconnected()
     func deviceButtonClicked()
     func deviceBatteryChanged(value: Int)
+    func deviceRSSIChanged(rssi: Int)
 }
 
 class BTDevice: NSObject {
@@ -75,6 +76,10 @@ class BTDevice: NSObject {
     
     func disconnect() {
         manager.cancelPeripheralConnection(peripheral)
+    }
+    
+    @objc func checkRssi(){
+        peripheral.readRSSI()
     }
 }
 
@@ -140,18 +145,24 @@ extension BTDevice: CBPeripheralDelegate{
         delegate?.deviceReady()
     }
     
-func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
-    print("Device: updated value for \(characteristic)")
-    
-    if characteristic.uuid == buttonChar?.uuid, let b = characteristic.value?.parseInt() {
-        _button = Int(b)
-        delegate?.deviceButtonClicked()
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        print("Device: updated value for \(characteristic)")
+        
+        if characteristic.uuid == buttonChar?.uuid, let b = characteristic.value?.parseInt() {
+            _button = Int(b)
+            peripheral.readRSSI()
+            delegate?.deviceButtonClicked()
+        }
+        
+        if characteristic.uuid == batteryChar?.uuid, let c = characteristic.value?.parseInt() {
+            _batteryLevel = Int(c)
+            delegate?.deviceBatteryChanged(value: _batteryLevel)
+        }
+        
     }
     
-    if characteristic.uuid == batteryChar?.uuid, let c = characteristic.value?.parseInt() {
-        _batteryLevel = Int(c)
-        delegate?.deviceBatteryChanged(value: _batteryLevel)
-    }
-    
+    func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
+        delegate?.deviceRSSIChanged(rssi: Int(RSSI))
+        print("\(Int(RSSI))")
     }
 }

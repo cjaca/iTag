@@ -141,6 +141,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.HomeKit = {
+								enabled = 0;
+							};
 							com.apple.WAC = {
 								enabled = 0;
 							};

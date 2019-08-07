@@ -85,6 +85,7 @@ extension BTManager: CBCentralManagerDelegate{
             delegate?.didDiscover(device: device)
         } else {
             //print("Manager: seen again \(peripheral)")
+            
         }
     }
 }
